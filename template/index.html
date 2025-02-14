@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Card Survey</title>
+    {% load static %}
+
+    <link rel="stylesheet"  href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="survey-container">
+        <h2>Gift Card Purchase Survey</h2>
+        <form id="surveyForm">
+            <label>How did you hear about us?</label>
+            <select name="source">
+                <option value="social_media">Social Media</option>
+                <option value="search_engine">Search Engine</option>
+                <option value="referral">Referral from a Friend</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label>What type of gift cards are you most interested in?</label>
+            <select name="gift_card_type">
+                <option value="shopping">Shopping</option>
+                <option value="gaming">Gaming</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="food">Food & Drinks</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label>Preferred price range?</label>
+            <select name="price_range">
+                <option value="10-25">$10 - $25</option>
+                <option value="26-50">$26 - $50</option>
+                <option value="51-100">$51 - $100</option>
+                <option value="101+">$101+</option>
+            </select>
+
+            <label>How often do you buy gift cards?</label>
+            <select name="frequency">
+                <option value="weekly">Once a week</option>
+                <option value="monthly">Once a month</option>
+                <option value="few_times_year">A few times a year</option>
+                <option value="rarely">Rarely</option>
+            </select>
+
+            <label>Preferred payment method?</label>
+            <select name="payment_method">
+                <option value="card">Credit/Debit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="crypto">Cryptocurrency</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label>Would you like to receive promotions and discounts?</label>
+            <input type="radio" name="promotions" value="yes"> Yes
+            <input type="radio" name="promotions" value="no"> No
+
+            <label>Any suggestions?</label>
+            <textarea name="suggestions" rows="4"></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="responseMessage"></p>
+    </div>
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Payment</title>
+   {% load static %}
+
+    <link rel="stylesheet"  href="{% static 'Payment.css' %}">
+<body>
+    <div class="payment-container">
+        <h2>Complete Your Payment</h2>
+        <form id="paymentForm">
+            <label>Select Gift Card:</label>
+            <select name="gift_card">
+                <option value="Amazon">Amazon</option>
+                <option value="PlayStation">PlayStation</option>
+                <option value="Netflix">Netflix</option>
+                <option class="steam">
+                    Steam
+                </option>
+            </select>
+
+            <label>Enter Amount ($):</label>
+            <input type="number" name="amount" required>
+
+            <label>Payment Method:</label>
+            <select name="payment_method">
+                <option value="card">Credit/Debit Card</option>
+            </select>
+
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <button type="submit">Pay Now</button>
+        </form>
+
+        <p id="paymentMessage"></p>
+    </div>
+    <script src="{% static 'payment.js' %}"></script>
+</body>
+</html>
